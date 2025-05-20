@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import jjh.sample.navigator.main.mvi.MainEvent
+import jjh.sample.navigator.main.mvi.MainIntent
 
 @Composable
 fun MainScreen(
@@ -46,7 +46,7 @@ fun MainScreen(
                     .background(color = Color.White)
                     .padding(all = 20.dp)
                     .clickable {
-                        viewModel.intent(MainEvent.Increment)
+                        viewModel.onEvent(MainIntent.Increment)
                     },
                 text = "+",
                 color = Color.Black,
@@ -57,7 +57,7 @@ fun MainScreen(
                     .background(color = Color.White)
                     .padding(all = 20.dp)
                     .clickable {
-                        viewModel.intent(MainEvent.Decrement)
+                        viewModel.onEvent(MainIntent.Decrement)
                     },
                 text = "-",
                 color = Color.Black,

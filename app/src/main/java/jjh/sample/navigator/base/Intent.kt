@@ -1,3 +1,3 @@
 package jjh.sample.navigator.base
 
-interface Event
+interface Intent
