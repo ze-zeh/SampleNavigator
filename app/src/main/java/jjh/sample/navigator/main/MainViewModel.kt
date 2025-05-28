@@ -2,7 +2,7 @@ package jjh.sample.navigator.main
 
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import jjh.sample.navigator.base.BaseViewModel
+import jjh.sample.navigator.base.legacy.BaseViewModel
 import jjh.sample.navigator.main.mvi.MainIntent
 import jjh.sample.navigator.main.mvi.MainSideEffect
 import jjh.sample.navigator.main.mvi.MainState

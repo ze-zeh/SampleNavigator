@@ -1,4 +1,4 @@
-package jjh.sample.navigator.base
+package jjh.sample.navigator.base.legacy
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
