@@ -43,7 +43,11 @@ fun MainScreen(
         }
     }
 
-    NormalUi(modifier, state, viewModel)
+    when {
+        state.isLoading == true -> { /**로딩 화면*/}
+        state.isError == true ->{/**에러 화면*/}
+        else -> NormalUi(modifier, state, viewModel)
+    }
 }
 
 private fun showChangeMessageListener(context: Context, message: String) {

@@ -14,13 +14,16 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * state ->loading/error 상황은 처리 생략
+ * */
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
 
     private val intentChannel = Channel<MainIntent>()
 
     val state = intentChannel.receiveAsFlow()
-        .runningFold(MainState(), ::reduceState)
+        .runningFold(MainState(isLoading = false), ::reduceState)
         .stateIn(viewModelScope, SharingStarted.Eagerly, MainState())
 
     private val _sideEffectChannel = Channel<MainSideEffect>(Channel.BUFFERED)
