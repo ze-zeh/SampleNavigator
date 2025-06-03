@@ -1,5 +1,5 @@
 package jjh.sample.navigator.main.mvi
 
-sealed class MainSideEffect  {
-
+sealed interface MainSideEffect  {
+    data class ShowChangeMessage(val message: String) : MainSideEffect
 }
