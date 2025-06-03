@@ -46,7 +46,7 @@ fun MainScreen(
                     .background(color = Color.White)
                     .padding(all = 20.dp)
                     .clickable {
-                        viewModel.onEvent(MainIntent.Increment)
+                        viewModel.submitIntent(MainIntent.Increment)
                     },
                 text = "+",
                 color = Color.Black,
@@ -57,7 +57,7 @@ fun MainScreen(
                     .background(color = Color.White)
                     .padding(all = 20.dp)
                     .clickable {
-                        viewModel.onEvent(MainIntent.Decrement)
+                        viewModel.submitIntent(MainIntent.Decrement)
                     },
                 text = "-",
                 color = Color.Black,
