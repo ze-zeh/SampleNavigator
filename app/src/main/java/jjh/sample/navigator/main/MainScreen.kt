@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import jjh.sample.navigator.common.ObserveAsEvents
+import jjh.sample.navigator.common.ObserveAsSideEffects
 import jjh.sample.navigator.main.mvi.MainIntent
 import jjh.sample.navigator.main.mvi.MainSideEffect
 import jjh.sample.navigator.main.mvi.MainState
@@ -34,7 +34,7 @@ fun MainScreen(
     val context = LocalContext.current
     val state = viewModel.state.collectAsStateWithLifecycle().value
 
-    ObserveAsEvents(flow = viewModel.sideEffectFlow) { sideEffect ->
+    ObserveAsSideEffects(flow = viewModel.sideEffectFlow) { sideEffect ->
         when (sideEffect) {
             is MainSideEffect.ShowChangeMessage -> showChangeMessageListener(
                 context = context,
@@ -44,8 +44,8 @@ fun MainScreen(
     }
 
     when {
-        state.isLoading == true -> { /**로딩 화면*/}
-        state.isError == true ->{/**에러 화면*/}
+//        state.isLoading == true -> { /**로딩 화면*/}
+//        state.isError == true ->{/**에러 화면*/}
         else -> NormalUi(modifier, state, viewModel)
     }
 }
